@@ -2,18 +2,20 @@ FROM node:18
 
 WORKDIR /app
 
+COPY package.json package-lock.json ./
+
 # Copy backend files
 COPY backend/ /app/backend/
 
 # Copy frontend files
 COPY frontend/ /app/frontend/
 
-# Install backend dependencies
-WORKDIR /app/backend
-RUN npm install
-
 # Install frontend dependencies
 WORKDIR /app/frontend
+RUN npm install
+
+# Install backend dependencies
+WORKDIR /app/
 RUN npm install
 
 # Expose the backend port
