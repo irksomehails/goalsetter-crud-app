@@ -29,7 +29,7 @@ ENV MONGO_URI=mongodb+srv://irksomehails:irksomehails@cluster0.saclfr7.mongodb.n
 ENV JWT_SECRET=abcd1234
 
 WORKDIR /app/frontend
-CMD npm start
+CMD npm build
 
 WORKDIR /app
 CMD npm start
