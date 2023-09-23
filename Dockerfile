@@ -4,11 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-# Copy backend files
-COPY backend/ /app/backend/
-
-# Copy frontend files
-COPY frontend/ /app/frontend/
+COPY . .
 
 # Install frontend dependencies
 WORKDIR /app/frontend
